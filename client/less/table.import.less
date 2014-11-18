@@ -1,0 +1,29 @@
+.table {
+  .cell {
+    float: left;
+    padding: 10px 15px;
+    .box-sizing();
+    position: relative;
+  }
+
+  .row {
+    .clearfix();
+    border-bottom: 1px solid @elements-border-color;
+  }
+
+  .head {
+    font-weight: bold;
+  }
+
+  .body {
+    .row {
+      &:hover {
+        background: @elements-bg-color-light-hover;
+      }
+    }
+  }
+
+  .delete {
+
+  }
+}

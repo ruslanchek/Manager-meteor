@@ -1,0 +1,9 @@
+.loop(@counter) when (@counter > 0) {
+  .loop((@counter - 1));
+
+  .width-@{counter} {
+    width: (1% * @counter);
+  }
+}
+
+.loop(100);
