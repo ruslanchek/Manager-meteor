@@ -1,0 +1,59 @@
+<template name="invoicesList">
+	<div class="table">
+	    <div class="head">
+	        <div class="row">
+	            <div class="cell width-5"></div>
+	            <div class="cell width-34">
+	                <a on-click="sort:title" href="#">Наименование</a>
+	            </div>
+	            <div class="cell width-21">
+	                <a on-click="sort:price" href="#">Сумма заказа</a>
+	            </div>
+	            <div class="cell width-35">
+	                <a on-click="sort:contragent.name" href="#">Контрагент</a>
+	            </div>
+	            <div class="cell width-5"></div>
+	        </div>
+	    </div>
+	    <div class="body">
+	        {{#each invoices}}
+	        <div class="row">
+	            <div class="cell width-5">
+	                {{#if payed}}
+	                    <span class="link-icon badge-payed badge-payed" title="Оплачен"><i class="icon-ruble"></i></span>
+	                {{/if}}
+
+	                {{#if payed}}
+	                    <span class="link-icon badge-payed badge-not-payed" title="Не оплачен"><i class="icon-ruble"></i></span>
+	                {{/if}}
+	            </div>
+	            <div class="cell width-34">
+	                <a class="link-underlined" href="#">Счет №{{title}}</a>&nbsp;<span class="color-grey">от {{date}}</span>
+
+	                {{#if payed}}
+	                    <div class="small color-green-light">
+	                        Оплачен <span class="color-grey-light">{{payDate}}</span>
+	                    </div>
+	                {{/if}}
+
+	                {{#if payed}}
+	                    <div class="small color-grey-light">Оплата до {{payTill}}</div>
+	                {{/if}}
+	            </div>
+	            <div class="cell width-21">
+	                {{price}}
+	                <div class="small color-grey-light">{{items}}</div>
+	            </div>
+	            <div class="cell width-35">
+	                {{#if contragent}}
+	                <a class="link-underlined" href="/contragents/{{id}}">{{type}} &laquo;{{name}}&raquo;</a>
+	                {{/if}}
+	            </div>
+	            <div class="cell width-5">
+	                <a class="link-icon color-red delete" title="Удалить" href="#"><i class="icon-times"></i></a>
+	            </div>
+	        </div>
+	        {{/each}}
+	    </div>
+	</div>
+</template>
