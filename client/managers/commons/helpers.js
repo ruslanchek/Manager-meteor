@@ -37,22 +37,12 @@ Handlebars.registerHelper("humanizeDate", function(date) {
 });
 
 Handlebars.registerHelper("getCompanyType", function(id) {
-	switch (id){
-		case 1 : {
-			return 'ООО';
-		} break;
+	var companyType = getStaticById(id, companyTypes);
 
-		case 2 : {
-			return 'ИП';
-		} break;
-
-		case 3 : {
-			return 'ОАО';
-		} break;
-
-		default : {
-			return '';
-		}
-	}	
+	if(companyType){
+		return companyType.name;
+	}else{
+		return '';
+	}
 });
 

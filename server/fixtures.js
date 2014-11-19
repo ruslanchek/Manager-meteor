@@ -2,86 +2,86 @@ if (Invoices.find().count() === 0) {
     var invoices = [
         {
             payed: true,
-            title: '002345',
+            title: '1',
             date: new Date(2012, 1, 13, 1, 22, 0, 0),
             payTill: new Date(),
             payDate: new Date(2012, 9, 13, 1, 22, 0, 0),
-            price: 10000020.01,
-            items: 101,
+            price: 589000.01,
+            items: 10,
             contragent: {
-                name: 'Хуй',
+                name: 'Нефтьмагистраль',
                 id: 1,
-                type: 2
+                type: 3
             }
         },
         {
             payed: false,
-            title: '002345',
+            title: '2',
             date: new Date(2012, 2, 13, 1, 22, 0, 0),
             payTill: new Date(),
             payDate: new Date(),
-            price: 100000010,
-            items: 103,
+            price: 120000,
+            items: 2,
             contragent: {
-                name: 'Нааа',
+                name: 'Альфабанк',
                 id: 1,
                 type: 1
             }
         },
         {
             payed: true,
-            title: '002345',
+            title: '3',
             date: new Date(2012, 9, 13, 1, 22, 0, 0),
             payTill: new Date(),
             payDate: new Date(2012, 9, 13, 1, 22, 0, 0),
-            price: 10000020.01,
-            items: 101,
+            price: 7205.55,
+            items: 1,
             contragent: {
-                name: 'Хуй',
+                name: 'Какашкин А.О.',
                 id: 1,
                 type: 2
             }
         },
         {
             payed: false,
-            title: '002345',
+            title: '4',
             date: new Date(2002, 1, 13, 1, 22, 0, 0),
             payTill: new Date(),
             payDate: new Date(),
-            price: 100000010,
-            items: 103,
+            price: 900200,
+            items: 2,
             contragent: {
-                name: 'Нааа',
+                name: 'Итегра',
                 id: 1,
                 type: 1
             }
         },
         {
             payed: true,
-            title: '002345',
+            title: '5',
             date: new Date(2012, 9, 13, 1, 22, 0, 0),
             payTill: new Date(),
             payDate: new Date(2012, 9, 13, 1, 22, 0, 0),
-            price: 10000020.01,
-            items: 101,
+            price: 10000,
+            items: 3,
             contragent: {
-                name: 'Хуй',
+                name: 'Дженерал Слатс',
                 id: 1,
-                type: 2
+                type: 1
             }
         },
         {
             payed: false,
-            title: '002345',
+            title: '6',
             date: new Date(),
             payTill: new Date(),
             payDate: new Date(),
-            price: 100000010,
-            items: 103,
+            price: 3407800,
+            items: 4,
             contragent: {
-                name: 'Нааа',
+                name: 'Альфабанк',
                 id: 1,
-                type: 1
+                type: 4
             }
         }
     ];
