@@ -19,38 +19,22 @@
 	        {{#each invoices}}
 	        <div class="row">
 	            <div class="cell width-5">
-	                {{#if payed}}
-	                    <span class="link-icon badge-payed badge-payed" title="Оплачен"><i class="icon-ruble"></i></span>
-	                {{/if}}
-
-	                {{#if payed}}
-	                    <span class="link-icon badge-payed badge-not-payed" title="Не оплачен"><i class="icon-ruble"></i></span>
-	                {{/if}}
+	                {{> payedIcon}}
 	            </div>
 	            <div class="cell width-34">
-	                <a class="link-underlined" href="#">Счет №{{title}}</a>&nbsp;<span class="color-grey">от {{date}}</span>
+	                <a class="link-underlined" href="#">Счет №{{title}}</a>&nbsp;<span class="color-grey">от {{humanizeDate date}}</span>
 
-	                {{#if payed}}
-	                    <div class="small color-green-light">
-	                        Оплачен <span class="color-grey-light">{{payDate}}</span>
-	                    </div>
-	                {{/if}}
-
-	                {{#if payed}}
-	                    <div class="small color-grey-light">Оплата до {{payTill}}</div>
-	                {{/if}}
+	                {{> payedWord}}
 	            </div>
 	            <div class="cell width-21">
-	                {{price}}
-	                <div class="small color-grey-light">{{items}}</div>
+	                {{convertPrice price}}
+	                <div class="small color-grey-light">{{pluralize items 'позиция' 'позиции' 'позиций' true}}</div>
 	            </div>
 	            <div class="cell width-35">
-	                {{#if contragent}}
-	                <a class="link-underlined" href="/contragents/{{id}}">{{type}} &laquo;{{name}}&raquo;</a>
-	                {{/if}}
+	                {{> contragentLink contragent}}
 	            </div>
 	            <div class="cell width-5">
-	                <a class="link-icon color-red delete" title="Удалить" href="#"><i class="icon-times"></i></a>
+	            	{{> deleteIcon}}
 	            </div>
 	        </div>
 	        {{/each}}

@@ -1,0 +1,25 @@
+<template name="contragentLink">
+	<a class="link-underlined" href="/contragents/{{id}}">{{getCompanyType type}} &laquo;{{name}}&raquo;</a>
+</template>
+
+<template name="deleteIcon">
+	<a class="link-icon color-red delete" title="Удалить" href="#"><i class="icon-times"></i></a>
+</template>
+
+<template name="payedWord">
+	{{#if payed}}
+        <div class="small color-green-light">
+            Оплачен <span class="color-grey-light">{{humanizeDate payDate}}</span>
+        </div>
+    {{else}}
+        <div class="small color-grey-light">Оплата до {{humanizeDate payTill}}</div>
+    {{/if}}
+</template>
+
+<template name="payedIcon">
+	{{#if payed}}
+        <span class="link-icon badge-payed badge-payed" title="Оплачен"><i class="icon-ruble"></i></span>
+    {{else}}
+        <span class="link-icon badge-payed badge-not-payed" title="Не оплачен"><i class="icon-ruble"></i></span>
+    {{/if}}
+</template>
