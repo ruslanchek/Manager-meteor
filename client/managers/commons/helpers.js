@@ -45,4 +45,3 @@ Handlebars.registerHelper("getCompanyType", function(id) {
 		return '';
 	}
 });
-
