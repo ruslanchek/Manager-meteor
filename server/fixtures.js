@@ -37,7 +37,7 @@ if (Invoices.find().count() === 0) {
             price: 7205.55,
             items: 1,
             contragent: {
-                name: 'Какашкин А.О.',
+                name: 'Какашкин Б.В.',
                 id: 1,
                 type: 2
             }

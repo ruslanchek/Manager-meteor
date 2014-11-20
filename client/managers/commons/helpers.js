@@ -1,4 +1,4 @@
-Handlebars.registerHelper("convertPrice", function(value) {
+Handlebars.registerHelper('convertPrice', function(value) {
 	if(!value){
 		value = 0;
 	}else{
@@ -8,7 +8,7 @@ Handlebars.registerHelper("convertPrice", function(value) {
   	return numeral(value).format('0,0.[00] $');
 });
 
-Handlebars.registerHelper("pluralize", function(value, forms1, forms3, forms5, addStr) {
+Handlebars.registerHelper('pluralize', function(value, forms1, forms3, forms5, addStr) {
 	var output = '';
 
 	if(value){
@@ -32,11 +32,11 @@ Handlebars.registerHelper("pluralize", function(value, forms1, forms3, forms5, a
 	return output;
 });
 
-Handlebars.registerHelper("humanizeDate", function(date) {
+Handlebars.registerHelper('humanizeDate', function(date) {
 	return moment(date).format('d MMMM YYYY', 'accusative');
 });
 
-Handlebars.registerHelper("getCompanyType", function(id) {
+Handlebars.registerHelper('getCompanyType', function(id) {
 	var companyType = getStaticById(id, companyTypes);
 
 	if(companyType){
@@ -44,4 +44,8 @@ Handlebars.registerHelper("getCompanyType", function(id) {
 	}else{
 		return '';
 	}
+});
+
+Handlebars.registerHelper('getCompanyTypes', function() {
+	return companyTypes;
 });

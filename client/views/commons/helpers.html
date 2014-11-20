@@ -25,7 +25,8 @@
 </template>
 
 <template name="inputSelect">
-    <select>
-        <option vlaue="{{id}}"></option>
-    </select>
+    {{xxx}}
+    {{#each this}}
+    {{data}} - {{value}} - {{id}} - {{name}} - {{selected}}
+    {{/each}}
 </template>
