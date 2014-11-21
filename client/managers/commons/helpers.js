@@ -5,7 +5,7 @@ Handlebars.registerHelper('convertPrice', function(value) {
 		value = parseFloat(value);
 	}
 
-  	return numeral(value).format('0,0.[00] $');
+  	return numeral(value).format('0,0.[00]');
 });
 
 Handlebars.registerHelper('pluralize', function(value, forms1, forms3, forms5, addStr) {
@@ -44,8 +44,4 @@ Handlebars.registerHelper('getCompanyType', function(id) {
 	}else{
 		return '';
 	}
-});
-
-Handlebars.registerHelper('getCompanyTypes', function() {
-	return companyTypes;
 });

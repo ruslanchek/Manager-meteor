@@ -22,12 +22,12 @@
 	                {{> payedIcon}}
 	            </div>
 	            <div class="cell width-34">
-	                <a class="link-underlined" href="#">Счет №{{title}}</a>&nbsp;<span class="color-grey">от {{humanizeDate date}}</span>
+	                <a class="link-underlined" href="{{pathFor 'invoiceEdit'}}">Счет №{{title}}</a>&nbsp;<span class="color-grey">от {{humanizeDate date}}</span>
 
 	                {{> payedWord}}
 	            </div>
 	            <div class="cell width-21">
-	                {{convertPrice price}}
+	                {{> priceConverted price}}
 	                <div class="small color-grey-light">{{pluralize items 'позиция' 'позиции' 'позиций' true}}</div>
 	            </div>
 	            <div class="cell width-35">
@@ -40,6 +40,4 @@
 	        {{/each}}
 	    </div>
 	</div>
-
-	{{>inputSelect getCompanyTypes(true)}}
 </template>
