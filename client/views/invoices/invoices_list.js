@@ -7,7 +7,7 @@ Template.invoicesList.events({
         e.preventDefault();
 
         if (confirm("Delete?")) {
-            Invoices.remove(currentPostId);
+            Invoices.remove(this._id);
             Router.go('invoicesList');
         }
     }
