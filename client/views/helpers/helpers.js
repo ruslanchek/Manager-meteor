@@ -45,3 +45,7 @@ Handlebars.registerHelper('getCompanyType', function(id) {
 		return '';
 	}
 });
+
+Handlebars.registerHelper('countCollection', function(collection) {
+	return collection.count();
+});

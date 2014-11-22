@@ -1,5 +1,29 @@
 <template name="invoiceEdit">
-	<h1><a href="{{pathFor 'invoicesList'}}" class="back-link link-icon color-blue"><i class="icon-chevron-left"></i></a>Редактирование счета №{{invoice.title}}<span class="color-grey font-light"> от {{humanizeDate invoice.date}}</span></h1>
+	<h1>
+		<a href="{{pathFor 'invoicesList'}}" class="back-link link-icon color-blue"><i class="icon-chevron-left"></i></a>
+		Редактирование счета №{{invoice.title}}
+		<span class="color-grey font-light"> от {{humanizeDate invoice.date}}</span>
+	</h1>
 
 	<div class="color-grey">{{getCompanyType invoice.contragent.type}} &laquo;{{invoice.contragent.name}}&raquo;</div>
+
+
+	<hr>
+	<br>
+
+
+	<form method="post" action="" class="form">
+        <label>
+            Номер счета
+            <input type="email" name="email" class="width-100" placeholder="Введите номер счета" />
+        </label>
+        <label>
+            Password
+            <input type="password" class="width-100" name="password" />
+        </label>
+        <br>
+        <p>
+            <button class="button button-go">Log in</button>
+        </p>
+    </form>
 </template>
