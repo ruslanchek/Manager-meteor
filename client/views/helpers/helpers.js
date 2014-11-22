@@ -33,7 +33,7 @@ Handlebars.registerHelper('pluralize', function(value, forms1, forms3, forms5, a
 });
 
 Handlebars.registerHelper('humanizeDate', function(date) {
-	return moment(date).format('d MMMM YYYY', 'accusative');
+	return moment(date).format('d MMMM YYYY');
 });
 
 Handlebars.registerHelper('getCompanyType', function(id) {
