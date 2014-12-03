@@ -8,7 +8,7 @@ Template.invoicesList.events({
 
         if (confirm("Delete?")) {
             Invoices.remove(this._id);
-            Router.go('invoicesList');
+            //Router.go('invoicesList');
         }
     }
 });

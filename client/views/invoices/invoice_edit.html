@@ -5,25 +5,34 @@
 		<span class="color-grey font-light"> от {{humanizeDate invoice.date}}</span>
 	</h1>
 
-	<div class="color-grey">{{getCompanyType invoice.contragent.type}} &laquo;{{invoice.contragent.name}}&raquo;</div>
+	<ul class="title-info">
+		<li>
+			<span class="color-grey">{{getCompanyType invoice.contragent.type}} &laquo;{{invoice.contragent.name}}&raquo;</span>
+		</li>
+		<li>
+			{{> payedIcon invoice}}
+		</li>
+		<li>
+			{{> payedWord invoice}}
+		</li>
+	</ul>
 
 
 	<hr>
-	<br>
-
 
 	<form method="post" action="" class="form">
-        <label>
-            Номер счета
-            <input type="email" name="email" class="width-100" placeholder="Введите номер счета" />
-        </label>
-        <label>
-            Password
-            <input type="password" class="width-100" name="password" />
-        </label>
-        <br>
+		<div class="grid-10">
+			<div class="span-5">
+				{{{formText 'Номер счета' 'title' invoice.title 100 'Введите номер счета'}}}
+			</div>
+			<div class="span-5">
+				{{{formText}}}
+			</div>
+		</div>
+        
+
         <p>
-            <button class="button button-go">Log in</button>
+            <button class="button flat button-go">Сохранить</button>
         </p>
     </form>
 </template>

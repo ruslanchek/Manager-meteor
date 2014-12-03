@@ -3,8 +3,8 @@ if (Invoices.find().count() === 0) {
         {
             payed: true,
             title: '1',
-            date: new Date(2012, 1, 13, 1, 22, 0, 0),
-            payTill: new Date(),
+            date: new Date(2012, 9, 13, 1, 22, 0, 0),
+            payTill: new Date(2012, 9, 13, 1, 22, 0, 0),
             payDate: new Date(2012, 9, 13, 1, 22, 0, 0),
             price: 589000.01,
             items: 10,
@@ -17,9 +17,9 @@ if (Invoices.find().count() === 0) {
         {
             payed: false,
             title: '2',
-            date: new Date(2012, 2, 13, 1, 22, 0, 0),
-            payTill: new Date(),
-            payDate: new Date(),
+            date: new Date(2012, 9, 13, 1, 22, 0, 0),
+            payTill: new Date(2012, 9, 13, 1, 22, 0, 0),
+            payDate: new Date(2012, 9, 13, 1, 22, 0, 0),
             price: 120000,
             items: 2,
             contragent: {
@@ -32,7 +32,7 @@ if (Invoices.find().count() === 0) {
             payed: true,
             title: '3',
             date: new Date(2012, 9, 13, 1, 22, 0, 0),
-            payTill: new Date(),
+            payTill: new Date(2012, 9, 13, 1, 22, 0, 0),
             payDate: new Date(2012, 9, 13, 1, 22, 0, 0),
             price: 7205.55,
             items: 1,
@@ -45,9 +45,9 @@ if (Invoices.find().count() === 0) {
         {
             payed: false,
             title: '4',
-            date: new Date(2002, 1, 13, 1, 22, 0, 0),
-            payTill: new Date(),
-            payDate: new Date(),
+            date: new Date(2012, 9, 13, 1, 22, 0, 0),
+            payTill: new Date(2012, 9, 13, 1, 22, 0, 0),
+            payDate: new Date(2012, 9, 13, 1, 22, 0, 0),
             price: 900200,
             items: 2,
             contragent: {
@@ -60,7 +60,7 @@ if (Invoices.find().count() === 0) {
             payed: true,
             title: '5',
             date: new Date(2012, 9, 13, 1, 22, 0, 0),
-            payTill: new Date(),
+            payTill: new Date(2012, 9, 13, 1, 22, 0, 0),
             payDate: new Date(2012, 9, 13, 1, 22, 0, 0),
             price: 10000,
             items: 3,
@@ -73,9 +73,9 @@ if (Invoices.find().count() === 0) {
         {
             payed: false,
             title: '6',
-            date: new Date(),
-            payTill: new Date(),
-            payDate: new Date(),
+            date: new Date(2012, 9, 13, 1, 22, 0, 0),
+            payTill: new Date(2012, 9, 13, 1, 22, 0, 0),
+            payDate: new Date(2012, 9, 13, 1, 22, 0, 0),
             price: 3407800,
             items: 4,
             contragent: {
