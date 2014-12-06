@@ -29,9 +29,9 @@
 <!-- payedIcon -->
 <template name="payedIcon">
 	{{#if payed}}
-        <span class="link-icon badge-payed badge-payed" title="Оплачен"><i class="icon-ruble"></i></span>
+        <span class="link-icon badge-payed" title="Оплачен"><i class="icon-ruble"></i></span>
     {{else}}
-        <span class="link-icon badge-payed badge-not-payed" title="hgНе оплачен"><i class="icon-ruble"></i></span>
+        <span class="link-icon badge-not-payed" title="hgНе оплачен"><i class="icon-ruble"></i></span>
     {{/if}}
 </template>
 
@@ -39,4 +39,12 @@
 <!-- priceConverted -->
 <template name="priceConverted">
     {{convertPrice this}} <span class="rub">&#8381;</span>
+</template>
+
+
+<!-- popup -->
+<template name="popup">
+    <div class="popup">
+        
+    </div>
 </template>

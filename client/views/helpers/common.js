@@ -70,14 +70,15 @@ Handlebars.registerHelper('humanizeDateFrom', function(date) {
 });
 
 
-Handlebars.registerHelper('formText', function(title, name, value, width, placeholder) {
+Handlebars.registerHelper('formText', function(title, name, value, width, placeholder, tabindex) {
 	return Blaze.toHTMLWithData(Template.formText, {
 		title: title,
 		name: name,
 		id: 'input-' + name,
 		value: value,
 		width: (width) ? width : 100,
-		placeholder: (placeholder) ? placeholder : ''
+		placeholder: (placeholder) ? placeholder : '',
+		tabindex: (tabindex) ? tabindex : 1 
 	});
 });
 

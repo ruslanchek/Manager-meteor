@@ -16,15 +16,15 @@ Template.invoicesList.events({
         e.preventDefault();
 
         var $target = $(e.target),
-        	data = $target.data();
+            data = $target.data();
 
         Session.set('sortInvoicesBy', data.sortby);
         Session.set('sortInvoicesDir', data.sortdir);
 
-        if(data.sortdir == 'ASC'){
-			$target.data('sortdir', 'DESC'); 
-        }else{
-        	$target.data('sortdir', 'ASC');
+        if (data.sortdir == 'ASC') {
+            $target.data('sortdir', 'DESC');
+        } else {
+            $target.data('sortdir', 'ASC');
         }
     }
 });
