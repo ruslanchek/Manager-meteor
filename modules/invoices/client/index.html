@@ -1,0 +1,94 @@
+<template name="invoiceEdit">
+    <h1>
+        <a href="{{pathFor 'invoicesList'}}" class="back-link link-icon color-blue"><i class="icon-chevron-left"></i></a>
+        Редактирование счета №{{invoice.title}}
+        <span class="color-grey font-light"> от {{humanizeDate invoice.date}}</span>
+    </h1>
+
+    <ul class="title-info">
+        <li>
+            <span class="color-grey">{{getCompanyType invoice.contragent.type}} &laquo;{{invoice.contragent.name}}&raquo;</span>
+        </li>
+        <li>
+            {{> payedIcon invoice}}
+        </li>
+        <li>
+            {{> payedWord invoice}}
+        </li>
+    </ul>
+
+    <hr>
+
+    <form method="post" action="" class="form" id="invoice-edit">
+        <div class="grid-10">
+            <div class="span-5">
+                {{{formText 'Номер счета' 'title' invoice.title 100 'Введите номер счета' 1}}}
+            </div>
+            <div class="span-5">
+            </div>
+        </div>
+
+        <p>
+            <button class="button flat button-go">Сохранить</button>
+        </p>
+    </form>
+</template>
+
+
+<template name="invoicesList">
+    <h1>{{h1}}</h1>
+
+    <div class="color-grey">
+        {{pluralize count 'документ' 'документа' 'документов' true}}
+    </div>
+
+    <br>
+
+    {{#if count}}
+        <div class="table">
+            <div class="head">
+                <div class="row">
+                    <div class="cell width-5"></div>
+                    <div class="cell width-34">
+                        <span data-role="sort" data-sortBy="title" data-sortDir="ASC">Наименование</span>
+                    </div>
+                    <div class="cell width-21">
+                        <span data-role="sort" data-sortBy="price" data-sortDir="ASC">Сумма заказа</span>
+                    </div>
+                    <div class="cell width-35">
+                        <span data-role="sort" data-sortBy="contragent" data-sortDir="ASC">Контрагент</span>
+                    </div>
+                    <div class="cell width-5"></div>
+                </div>
+            </div>
+            <div class="body">
+                {{#each invoices}}
+                    <div class="row">
+                        <div class="cell width-5">
+                            {{> payedIcon}}
+                        </div>
+                        <div class="cell width-34">
+                            <a class="link-underlined" href="{{pathFor 'invoiceEdit'}}">Счет №{{title}}</a>&nbsp;<span class="color-grey">от {{humanizeDate date}}</span>
+
+                            <div class="small">
+                                {{> payedWord}}
+                            </div>
+                        </div>
+                        <div class="cell width-21">
+                            {{> priceConverted price}}
+                            <div class="small color-grey-light">{{pluralize items 'позиция' 'позиции' 'позиций' true}}</div>
+                        </div>
+                        <div class="cell width-35">
+                            {{> contragentLink contragent}}
+                        </div>
+                        <div class="cell width-5">
+                            {{> deleteIcon}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    {{else}}
+        Нет счетов, <a href="#">создать</a> новый?
+    {{/if}}
+</template>

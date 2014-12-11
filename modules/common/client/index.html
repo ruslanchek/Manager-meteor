@@ -1,0 +1,161 @@
+<!-- layout -->
+<template name="layout">
+    <div class="wrapper">
+        {{> header}}
+
+        <div class="content">
+            <div class="limiter">
+                {{> yield}}
+            </div>
+        </div>
+    </div>
+
+    {{> footer}}
+</template>
+
+
+
+<!-- footer -->
+<template name="footer">
+    <footer>
+        <div class="limiter">
+
+        </div>
+    </footer>
+</template>
+
+
+
+<!-- header -->
+<template name="header">
+    <div class="nav-hero">
+        <div class="limiter">
+            <a href="/" class="color-white logo">Manager</a>
+
+            <a href="#" class="color-white float-right link-icon" title="Меню"><i class="icon-gear"></i></a>
+        </div>
+    </div>
+</template>
+
+
+
+<template name="404">
+    <h1>404</h1>
+    Страница не найдена
+</template>
+
+
+
+<template name="home">
+    <div class="grid-12">
+        <div class="span-4">
+            <a href="/invoices" class="button flat button-fat width-100">Счета</a>
+        </div>
+        <div class="span-4">
+            <a href="/invoices" class="button flat button-fat width-100">Счета</a>
+        </div>
+        <div class="span-4">
+            <a href="/invoices" class="button flat button-fat width-100">Счета</a>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="grid-12">
+        <div class="span-4">
+            <a href="/invoices" class="button flat button-fat width-100">Счета</a>
+        </div>
+        <div class="span-4">
+            <a href="/invoices" class="button flat button-fat width-100">Счета</a>
+        </div>
+        <div class="span-4">
+            <a href="/invoices" class="button flat button-fat width-100">Счета</a>
+        </div>
+    </div>
+</template>
+
+
+
+<!-- contragentLink -->
+<template name="contragentLink">
+	<a class="link-underlined" href="/contragents/{{id}}">{{getCompanyType type}} &laquo;{{name}}&raquo;</a>
+</template>
+
+
+
+<!-- deleteIcon -->
+<template name="deleteIcon">
+	<a class="link-icon small color-red delete" title="Удалить" href="#"><i class="icon-times"></i></a>
+</template>
+
+
+
+<!-- payedWord -->
+<template name="payedWord">
+	{{#if payed}}
+        <span class="color-green-light">Оплачен</span> 
+        <span class="color-grey-light" title="{{humanizeDateTime payDate}}">{{humanizeDateFrom payDate}}</span>
+    {{else}}
+        {{#if dateGT payTill}}
+            <span class="color-red-light">Оплата просрочена</span> 
+            <span class="color-grey-light" title="{{humanizeDateTime payTill}}">{{humanizeDateFrom payTill}}</span>
+        {{else}}
+            <span class="color-grey-light" title="{{humanizeDateTime payTill}}">Оплата до {{humanizeDate payTill}}</span>
+        {{/if}}
+    {{/if}}
+</template>
+
+
+
+<!-- payedIcon -->
+<template name="payedIcon">
+	{{#if payed}}
+        <span class="link-icon badge-payed" title="Оплачен"><i class="icon-ruble"></i></span>
+    {{else}}
+        <span class="link-icon badge-not-payed" title="hgНе оплачен"><i class="icon-ruble"></i></span>
+    {{/if}}
+</template>
+
+
+
+<!-- priceConverted -->
+<template name="priceConverted">
+    {{convertPrice this}} <span class="rub">&#8381;</span>
+</template>
+
+
+
+<!-- dialog -->
+<template name="dialog">
+    <div class="dialog">
+        
+    </div>
+</template>
+
+
+<!-- formText -->
+<template name="formText">
+    <label>
+        {{title}}
+        <input type="text" id="{{id}}" name="{{name}}" class="width-{{width}}" placeholder="{{placeholder}}" value="{{value}}" tabindex="{{tabindex}}" />
+    </label>
+</template>
+
+
+
+<!-- popup -->
+<template name="popup">
+    <div class="popup">
+        <div class="window">
+            <a href="#" class="close">close</a>
+            <div class="title">{{title}}</div>
+            <div class="content">{{content}}</div>
+        </div>
+    </div>
+</template>
+
+
+<!-- popupSetPayed -->
+<template name="popupSetPayed">
+    Payed template
+</template>

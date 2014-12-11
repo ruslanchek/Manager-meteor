@@ -90,5 +90,5 @@ if (Invoices.find().count() === 0) {
         var o = invoices[i];
 
         Invoices.insert(o);
-    };
+    }
 }
