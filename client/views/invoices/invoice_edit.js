@@ -28,7 +28,7 @@ Template.invoiceEdit.events({
     'click .badge-payed, click .badge-not-payed': function(e) {
         e.preventDefault();
 
-        var popup = new Popup('popupSetPayed');
+        var popup = new PopupSetPayedDate();
 
         popup.open();
 
