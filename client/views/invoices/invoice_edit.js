@@ -28,6 +28,10 @@ Template.invoiceEdit.events({
     'click .badge-payed, click .badge-not-payed': function(e) {
         e.preventDefault();
 
+        var popup = new Popup('popupSetPayed');
+
+        popup.open();
+
         updateInvoice(this._id, {
             payed: (this.payed) ? false : true,
             payDate: new Date()
