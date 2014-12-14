@@ -23,5 +23,27 @@
 		background-color: #fff;
 		box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 	  	.scale(0);
+
+	  	.title {
+		  background-color: @panel-color-light;
+		  padding: 12px 20px;
+		  font-size: 22px;
+		  color: @color-grey-dark;
+		  font-weight: bold;
+		}
+
+	  	.close {
+		  	position: absolute;
+		  	top: -20px;
+		  	right: -20px;
+			text-decoration: none;
+		  	font-weight: normal;
+		  	font-size: 16px;
+		  	color: @color-grey-dark;
+
+		  	&:hover {
+			  opacity: 0.75;
+			}
+		}
 	}
 }
