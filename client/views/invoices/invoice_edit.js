@@ -28,13 +28,24 @@ Template.invoiceEdit.events({
     'click .badge-payed, click .badge-not-payed': function(e) {
         e.preventDefault();
 
-        var popup = new PopupSetPayedDate();
+        var _this = this;
 
-        popup.open();
+        if(this.payed){
+            updateInvoice(_this._id, {
+                payed: false
+            });
+        }else{
+            var popup = new PopupSetPayedDate({
+                date: this.payDate,
+                onConfirm: function(date){
+                    updateInvoice(_this._id, {
+                        payed: true,
+                        payDate: date
+                    });
+                }
+            });
 
-        updateInvoice(this._id, {
-            payed: (this.payed) ? false : true,
-            payDate: new Date()
-        });
+            popup.open();
+        }
     }
 });
