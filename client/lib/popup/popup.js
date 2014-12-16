@@ -120,6 +120,7 @@ PopupSetPayedDate = function(options){
 			template: 'popupSetPayedDate',
 			onBeforeOpen: function(){
 				$('.datepicker').datepicker({
+					maxDate: new Date(),
 					onSelect: function(){
 						_this.options.onSelect();
 						selected_date = $('.datepicker').datepicker('getDate');

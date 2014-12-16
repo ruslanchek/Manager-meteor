@@ -1,24 +1,28 @@
 <template name="invoicesList">
 	<h1>{{h1}}</h1>
 
-	<div class="color-grey">
-		{{pluralize count 'документ' 'документа' 'документов' true}}
-	</div>
+    <ul class="title-info">
+        <li>
+            <div class="color-grey">
+				{{pluralize count 'документ' 'документа' 'документов' true}}
+            </div>
+        </li>
+    </ul>
 
-	<br>
+    <hr/>
 
 	{{#if count}}
 		<div class="table">
 		    <div class="head">
 		        <div class="row">
-		            <div class="cell width-5"></div>
-		            <div class="cell width-34">
+		            <div class="cell width-39">
 		                <span data-role="sort" data-sortBy="title" data-sortDir="ASC">Наименование</span>
 		            </div>
+                    <div class="cell width-5"></div>
 		            <div class="cell width-21">
 		                <span data-role="sort" data-sortBy="price" data-sortDir="ASC">Сумма заказа</span>
 		            </div>
-		            <div class="cell width-35">
+		            <div class="cell width-30">
 		                <span data-role="sort" data-sortBy="contragent" data-sortDir="ASC">Контрагент</span>
 		            </div>
 		            <div class="cell width-5"></div>
@@ -27,21 +31,21 @@
 		    <div class="body">
 		        {{#each invoices}}
 		        <div class="row">
-		            <div class="cell width-5">
-		                {{> payedIcon}}
-		            </div>
-		            <div class="cell width-34">
+		            <div class="cell width-39">
 		                <a class="link-underlined" href="{{pathFor 'invoiceEdit'}}">Счет №{{title}}</a>&nbsp;<span class="color-grey">от {{humanizeDate date}}</span>
 						
 						<div class="small">
 		                	{{> payedWord}}
 		                </div>
 		            </div>
+                    <div class="cell width-5">
+						{{> payedIcon}}
+                    </div>
 		            <div class="cell width-21">
 		                {{> priceConverted price}}
 		                <div class="small color-grey-light">{{pluralize items 'позиция' 'позиции' 'позиций' true}}</div>
 		            </div>
-		            <div class="cell width-35">
+		            <div class="cell width-30">
 		                {{> contragentLink contragent}}
 		            </div>
 		            <div class="cell width-5">

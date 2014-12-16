@@ -1,4 +1,7 @@
 .table {
+  margin-left: -15px;
+  width: 102.75%;
+
   .cell {
     float: left;
     padding: 10px 15px;
@@ -8,15 +11,23 @@
 
   .row {
     .clearfix();
-    border-bottom: 1px solid @elements-border-color;
   }
 
   .head {
     font-weight: bold;
+    background-color: @elements-bg-color-light-hover;
+
+    .row {
+      border: none;
+    }
   }
 
   .body {
     .row {
+      .cell {
+        padding: 18px 15px;
+      }
+
       &:hover {
         background-color: @elements-bg-color-light-hover;
       }
