@@ -1,16 +1,14 @@
 <template name="invoiceEdit">
 	<h1>
 		<a href="{{pathFor 'invoicesList'}}" class="back-link link-icon color-blue"><i class="icon-chevron-left"></i></a>
+
 		Редактирование счета №{{invoice.title}}
 		<span class="color-grey font-light"> от {{humanizeDate invoice.date}}</span>
 	</h1>
 
 	<ul class="title-info">
 		<li>
-			<span class="color-grey">{{getCompanyType invoice.contragent.type}} &laquo;{{invoice.contragent.name}}&raquo;</span>
-		</li>
-		<li>
-			{{> payedIcon invoice}}
+			<span class="color-grey">{{> contragentLink invoice.contragent}}</span>
 		</li>
 		<li>
 			{{> payedWord invoice}}
