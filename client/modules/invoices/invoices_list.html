@@ -28,12 +28,13 @@
 		            <div class="cell width-5"></div>
 		        </div>
 		    </div>
+
 		    <div class="body">
 		        {{#each invoices}}
 		        <div class="row">
 		            <div class="cell width-39">
 		                <a class="link-underlined" href="{{pathFor 'invoiceEdit'}}">Счет №{{title}}</a>&nbsp;<span class="color-grey">от {{humanizeDate date}}</span>
-						
+
 						<div class="small">
 		                	{{> payedWord}}
 		                </div>
