@@ -1,4 +1,4 @@
-PopupSetPayedDate = function(options){
+PopupDate = function(options){
 	var _this = this;
 
 	this.options = _.extend({
@@ -20,7 +20,6 @@ PopupSetPayedDate = function(options){
 				$('.datepicker').datepicker({
 					maxDate: new Date(),
 					onSelect: function(){
-						_this.options.onSelect();
 						selected_date = $('.datepicker').datepicker('getDate');
 
 						var now = new Date();
@@ -28,6 +27,8 @@ PopupSetPayedDate = function(options){
 						selected_date.setHours(now.getHours());
 						selected_date.setMinutes(now.getMinutes());
 						selected_date.setSeconds(now.getSeconds());
+
+						_this.options.onSelect(selected_date);
 					}
 				});
 
@@ -41,7 +42,7 @@ PopupSetPayedDate = function(options){
 					_this.options.onConfirm(selected_date);
 				});
 			},
-			onEnter: function(){
+			onConfirm: function(){
 				popup.close();
 				_this.options.onConfirm(selected_date);
 			}

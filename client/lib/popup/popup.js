@@ -15,7 +15,7 @@ Popup = function(options){
 		onClose: function(){
 
 		},
-		onEnter: function(){
+		onConfirm: function(){
 
 		}
 	}, options);
@@ -80,7 +80,7 @@ Popup = function(options){
 				}
 
 				if(e.keyCode == 13){
-					_this.options.onEnter();
+					_this.options.onConfirm();
 				}
 			});
 		}

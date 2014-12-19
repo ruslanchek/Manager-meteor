@@ -35,7 +35,7 @@ Template.invoiceEdit.events({
                 payed: false
             });
         }else{
-            var popup = new PopupSetPayedDate({
+            var popup = new PopupDate({
                 date: this.payDate,
                 onConfirm: function(date){
                     updateInvoice(_this._id, {
