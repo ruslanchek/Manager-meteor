@@ -22,9 +22,10 @@
 	<form method="post" action="" class="form" id="invoice-edit">
 		<div class="grid-10">
 			<div class="span-5">
-				{{{formText 'Номер счета' 'title' invoice.title 100 'Введите номер счета' 1}}}
+				{{{inputText 'Номер счета' 'title' invoice.title 100 'Введите номер счета' 1}}}
 			</div>
 			<div class="span-5">
+				{{{inputDate 'Дата' 'date' invoice.date 100 'Выберите дату' 1}}}
 			</div>
 		</div>
 

@@ -23,29 +23,5 @@ Template.invoiceEdit.events({
         updateInvoice(this.invoice._id, {
             title: $(e.target).find('[name=title]').val()
         });
-    },
-
-    'click .badge-payed, click .badge-not-payed': function(e) {
-        e.preventDefault();
-
-        var _this = this;
-
-        if(this.payed){
-            updateInvoice(_this._id, {
-                payed: false
-            });
-        }else{
-            var popup = new PopupDate({
-                date: this.payDate,
-                onConfirm: function(date){
-                    updateInvoice(_this._id, {
-                        payed: true,
-                        payDate: date
-                    });
-                }
-            });
-
-            popup.open();
-        }
     }
 });
