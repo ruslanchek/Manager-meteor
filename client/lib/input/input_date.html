@@ -1,6 +1,7 @@
 <template name="inputDate">
 	<label>
         {{title}}
-        <input type="text" id="{{id}}" name="{{name}}" class="input-date width-{{width}}" placeholder="{{placeholder}}" value="{{value}}" tabindex="{{tabindex}}" />
+        <input type="text" id="{{id}}" name="{{name}}" class="input-date width-{{width}}" placeholder="{{placeholder}}" value="{{humanizeDate value}}" tabindex="{{tabindex}}" />
+        <a class="calendar" href="#">CAL</a>
     </label>
 </template>
