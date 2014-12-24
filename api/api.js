@@ -6,4 +6,8 @@ Module = function(options){
 	}, options);
 
 	this.collection = new Mongo.Collection(this.options.name);
+
+	this.setRoute = function () {
+		
+	}
 };
